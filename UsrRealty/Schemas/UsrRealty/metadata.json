@@ -1,7 +1,7 @@
 = MetaData.Schema.UId "f91ca093-cbff-4021-9299-99d2a424b690"
 = MetaData.Schema.A2 "UsrRealty"
 = MetaData.Schema.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
-= MetaData.Schema.B6 "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2"
+= MetaData.Schema.B6 "44aa63f1-48e1-4fbf-bdce-1860eacd9278"
 = MetaData.Schema.EG1.UId "35ed072d-b64b-48d9-a321-be185b27409b"
 = MetaData.Schema.EG1.A2 "UsrRealtyEventsProcess"
 = MetaData.Schema.EG1.A5 "6f71e54c-1960-40c9-94f6-073fd67699ab"
@@ -13,7 +13,6 @@
 = MetaData.Schema.EG1.BK37.A4 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
 = MetaData.Schema.EG1.BK3 []
 = MetaData.Schema.EG1.BK4 []
-+ MetaData.Schema.EG1.Labels []
 = MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
 + MetaData.Schema.D29 "null"
 + MetaData.Schema.D30 "null"
@@ -23,14 +22,78 @@
   "UId": "aa2fb020-6d65-41eb-be9b-9b95cc26efbb",
   "A2": "UsrName",
   "A3": "f91ca093-cbff-4021-9299-99d2a424b690",
-  "A4": "f91ca093-cbff-4021-9299-99d2a424b690", 
+  "A4": "f91ca093-cbff-4021-9299-99d2a424b690",
   "A5": "6f71e54c-1960-40c9-94f6-073fd67699ab",
   "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd",
-  "E2": 1,
-  "E5": false
+  "E2": 1
 }
-~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","aa2fb020-6d65-41eb-be9b-9b95cc26efbb"]
++ MetaData.Schema.D2 {
+  "UId": "aae69384-28c2-e696-d482-80bb0dcd66c7",
+  "A2": "UsrArea",
+  "A3": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A4": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A5": "752df71f-54dd-4b23-a41a-c210357535cc",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6",
+  "E2": 1
+}
++ MetaData.Schema.D2 {
+  "UId": "596ebbbb-7b3d-d48a-cc64-97f1afa8451b",
+  "A2": "UsrPrice",
+  "A3": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A4": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A5": "752df71f-54dd-4b23-a41a-c210357535cc",
+  "S2": "5cc8060d-6d10-4773-89fc-8c12d6f659a6",
+  "E2": 1
+}
++ MetaData.Schema.D2 {
+  "UId": "584e2a3b-93ed-b0a4-78d0-5951a15d09dc",
+  "A2": "UsrComment",
+  "A3": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A4": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A5": "752df71f-54dd-4b23-a41a-c210357535cc",
+  "S2": "5ca35f10-a101-4c67-a96a-383da6afacfc",
+  "E19": true
+}
++ MetaData.Schema.D2 {
+  "UId": "adefc375-e58f-3fe8-ff6f-b25ff85a5b3f",
+  "A2": "UsrRealtyOfferType",
+  "A3": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A4": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A5": "752df71f-54dd-4b23-a41a-c210357535cc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "bd3d6441-e44e-4429-b778-c57d34c22a7d",
+  "E2": 1,
+  "E6": true,
+  "E20": true,
+  "E12": {
+    "FB1": 1,
+    "FB2": "a831bf06-c4bf-4c69-a08c-9440bf1d3165"
+  },
+  "E17": "UsrRealtyOfferTypeId",
+  "E18": "UsrRealtyOfferTypeName"
+}
++ MetaData.Schema.D2 {
+  "UId": "63599c5d-3ede-7d80-d176-d9732a53a8f3",
+  "A2": "UsrRealtyType",
+  "A3": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A4": "f91ca093-cbff-4021-9299-99d2a424b690",
+  "A5": "752df71f-54dd-4b23-a41a-c210357535cc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "979a2acb-bb1a-49a5-ac82-cd8502353b15",
+  "E2": 1,
+  "E6": true,
+  "E20": true,
+  "E12": {
+    "FB1": 1,
+    "FB2": "05c90f04-a2db-4620-8da9-dd4e5ad04869"
+  },
+  "E17": "UsrRealtyTypeId",
+  "E18": "UsrRealtyTypeName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","aa2fb020-6d65-41eb-be9b-9b95cc26efbb","aae69384-28c2-e696-d482-80bb0dcd66c7","596ebbbb-7b3d-d48a-cc64-97f1afa8451b","584e2a3b-93ed-b0a4-78d0-5951a15d09dc","adefc375-e58f-3fe8-ff6f-b25ff85a5b3f","63599c5d-3ede-7d80-d176-d9732a53a8f3"]
 = MetaData.Schema.D20.A2 "UsrRealtyEvents"
+= MetaData.Schema.D36.A3 "f91ca093-cbff-4021-9299-99d2a424b690"
+= MetaData.Schema.D36.BS1 false
 - MetaData.Schema.EG1.B6
 - MetaData.Schema.EG1.BK29
 - MetaData.Schema.EG1.BK30
