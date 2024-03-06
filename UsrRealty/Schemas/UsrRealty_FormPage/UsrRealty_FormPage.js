@@ -71,7 +71,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 			},
 			{
 				"operation": "insert",
-				"name": "UsrPrice",
+				"name": "UsrCommissionPercent",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
@@ -80,9 +80,13 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 						"rowSpan": 1
 					},
 					"type": "crt.NumberInput",
-					"label": "$Resources.Strings.PDS_UsrPrice_iwsjycz",
+					"label": "$Resources.Strings.PDS_UsrRealtyOfferTypeUsrCommissionPercent",
+					"control": "$PDS_UsrRealtyOfferTypeUsrCommissionPercent",
+					"readonly": true,
+					"placeholder": "",
 					"labelPosition": "auto",
-					"control": "$PDS_UsrPrice_iwsjycz"
+					"tooltip": "",
+					"visible": true
 				},
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
@@ -90,7 +94,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 			},
 			{
 				"operation": "insert",
-				"name": "UsrArea",
+				"name": "UsrCommission",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
@@ -99,9 +103,13 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 						"rowSpan": 1
 					},
 					"type": "crt.NumberInput",
-					"label": "$Resources.Strings.PDS_UsrArea_py8w722",
+					"label": "$Resources.Strings.PDS_UsrCommission_acj6o1o",
 					"labelPosition": "auto",
-					"control": "$PDS_UsrArea_py8w722"
+					"control": "$PDS_UsrCommission_acj6o1o",
+					"visible": true,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
 				},
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
@@ -109,11 +117,49 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 			},
 			{
 				"operation": "insert",
-				"name": "UsrRealtyType",
+				"name": "UsrPrice",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
 						"row": 1,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrPrice_iwsjycz",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrPrice_iwsjycz"
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "UsrArea",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"row": 1,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrArea_py8w722",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrArea_py8w722"
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "UsrRealtyType",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 2,
 						"colSpan": 1,
 						"rowSpan": 1
 					},
@@ -131,7 +177,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
-				"index": 0
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -139,7 +185,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 				"values": {
 					"layoutConfig": {
 						"column": 2,
-						"row": 1,
+						"row": 2,
 						"colSpan": 1,
 						"rowSpan": 1
 					},
@@ -157,7 +203,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
-				"index": 1
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -180,7 +226,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 					"type": "crt.ExpansionPanel",
 					"tools": [],
 					"items": [],
-					"title": "#ResourceString(ExpansionPanel_s7imhyk_title)#",
+					"title": "#ResourceString(ExpansionPanel_RealtyVisits_title)#",
 					"toggleType": "default",
 					"togglePosition": "before",
 					"expanded": true,
@@ -188,7 +234,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 					"fullWidthHeader": false,
 					"titleWidth": 20,
 					"padding": {
-						"top": "small",
+						"top": "medium",
 						"bottom": "small",
 						"left": "small",
 						"right": "none"
@@ -552,7 +598,6 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 							"path": "PDS.UsrPrice"
 						},
 						"validators": {
-							/* Bind the custom validator to the attribute. */
 							"GreaterThanZero": {
 								"type": "usr.GreaterThanZero",
 								"params": {
@@ -566,7 +611,6 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 							"path": "PDS.UsrArea"
 						},
 						"validators": {
-							/* Bind the custom validator to the attribute. */
 							"GreaterThanZero": {
 								"type": "usr.GreaterThanZero",
 								"params": {
@@ -629,6 +673,16 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 								}
 							}
 						}
+					},
+					"PDS_UsrCommission_acj6o1o": {
+						"modelConfig": {
+							"path": "PDS.UsrCommission"
+						}
+					},
+					"PDS_UsrRealtyOfferTypeUsrCommissionPercent": {
+						"modelConfig": {
+							"path": "PDS.UsrRealtyOfferTypeUsrCommissionPercent"
+						}
 					}
 				}
 			},
@@ -669,7 +723,13 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrRealty"
+							"entitySchemaName": "UsrRealty",
+							"attributes": {
+								"UsrRealtyOfferTypeUsrCommissionPercent": {
+									"path": "UsrRealtyOfferType.UsrCommissionPercent",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					},
@@ -700,28 +760,33 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 		handlers: /**SCHEMA_HANDLERS*/[
 					{
 						request: "crt.HandleViewModelAttributeChangeRequest",
-						/* The custom implementation of the system query handler. */
 						handler: async (request, next) => {
 							if (request.attributeName === 'PDS_UsrPrice_iwsjycz') {
 								const price = await request.$context.PDS_UsrPrice_iwsjycz;
 								
-								/* get the value from system setting */
+								// get the value from system setting
 								const sysSettingsService = new sdk.SysSettingsService();
 								const priceThreshold = await sysSettingsService.getByCode('UsrRealtyCommentRequired');
 								const isCommentsMandatory = price > priceThreshold.value ? true : false
 								
-								this.console.log(price, priceThreshold);
-								
-								/* Check the request status. */
 								if (isCommentsMandatory) {
-									/* If the request is new, apply the required validator to the UsrDescription attribute. */
 									request.$context.enableAttributeValidator('PDS_UsrComment_stcfw0f', 'required');
 								} else {
-									/* Do not apply the required validator to the UsrDescription attribute for non-new requests. */
 									request.$context.disableAttributeValidator('PDS_UsrComment_stcfw0f', 'required');
 								}
 							}
-							/* Call the next handler if it exists and return its result. */
+							return next?.handle(request);
+						}
+			},
+			{
+						request: "crt.HandleViewModelAttributeChangeRequest",
+						handler: async (request, next) => {
+							if (request.attributeName === 'PDS_UsrPrice_iwsjycz' || request.attributeName === 'PDS_UsrRealtyOfferTypeUsrCommissionPercent') {
+								const price = await request.$context.PDS_UsrPrice_iwsjycz;
+								const commissionPercent = await request.$context.PDS_UsrRealtyOfferTypeUsrCommissionPercent;
+								
+								request.$context.PDS_UsrCommission_acj6o1o = (price * commissionPercent) / 100;
+							}
 							return next?.handle(request);
 						}
 			}
