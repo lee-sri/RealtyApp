@@ -14,7 +14,7 @@ namespace Terrasoft.Configuration
     public class UsrRealtyAveragePrice : BaseService, IReadOnlySessionState
     {
 
- 
+        /*
         [OperationContract]
         [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
             ResponseFormat = WebMessageFormat.Json)]
@@ -32,6 +32,27 @@ namespace Terrasoft.Configuration
             decimal result = select.ExecuteScalar<decimal>();
             return result;
         }
+        */
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
+            ResponseFormat = WebMessageFormat.Json)]
+        public decimal CalculateAveragePrice(Guid typeId, Guid offerTypeId)
+        {
+            if (typeId.IsEmpty() || offerTypeId.IsEmpty()) return -1;
+
+            Select select = new Select(UserConnection)
+                .Column(Func.Avg("UsrPrice"))
+                .From("UsrRealty")
+                .Where("UsrRealtyTypeId").IsEqual(Column.Parameter(typeId))
+                .And("UsrRealtyOfferTypeId").IsEqual(Column.Parameter(offerTypeId))
+                as Select;
+
+            decimal result = select.ExecuteScalar<decimal>();
+            return result;
+        }
+
     }
 
 }
