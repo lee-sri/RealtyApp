@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "722557be-75aa-404b-a22d-277d8a4963eb",
+    "Name": "UsrAddMultipleRealtyVisits",
+    "ModifiedOnUtc": "\/Date(1709903854000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Add multiple realty visits",
+    "DependsOn": []
+  }
+}

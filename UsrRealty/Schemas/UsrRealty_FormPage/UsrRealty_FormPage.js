@@ -51,6 +51,31 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 			},
 			{
 				"operation": "insert",
+				"name": "Button_AddAutoRealtyVisits",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_AddAutoRealtyVisits_caption)#",
+					"color": "accent",
+					"disabled": false,
+					"size": "large",
+					"iconPosition": "only-text",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrAddMultipleRealtyVisits",
+							"processRunType": "ForTheSelectedPage",
+							"recordIdProcessParameterName": "ParentRealtyIdParamter"
+						}
+					},
+					"clickMode": "default"
+				},
+				"parentName": "ActionButtonsContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
 				"name": "UsrName",
 				"values": {
 					"layoutConfig": {
@@ -487,14 +512,16 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 							"path": "UsrOwner",
 							"caption": "#ResourceString(GridDetail_twswoz1DS_UsrOwner)#",
 							"dataValueType": 10,
-							"referenceSchemaName": "Contact"
+							"referenceSchemaName": "Contact",
+							"width": 168
 						},
 						{
 							"id": "259c46d8-4673-e25f-1bb8-4c4ffc7f4065",
 							"code": "GridDetail_twswoz1DS_UsrComment",
 							"path": "UsrComment",
 							"caption": "#ResourceString(GridDetail_twswoz1DS_UsrComment)#",
-							"dataValueType": 30
+							"dataValueType": 30,
+							"width": 220
 						}
 					],
 					"bulkActions": []
@@ -579,6 +606,17 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 				"parentName": "GridDetail_RealtyVisits",
 				"propertyName": "bulkActions",
 				"index": 2
+			},
+			{
+				"operation": "insert",
+				"name": "MenuItem_8zbhhu4",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_8zbhhu4_caption)#"
+				},
+				"parentName": "GridDetail_RealtyVisits",
+				"propertyName": "bulkActions",
+				"index": 3
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -642,7 +680,10 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 					"GridDetail_twswoz1": {
 						"isCollection": true,
 						"modelConfig": {
-							"path": "GridDetail_twswoz1DS"
+							"path": "GridDetail_twswoz1DS",
+							"sortingConfig": {
+								"default": []
+							}
 						},
 						"viewModelConfig": {
 							"attributes": {
